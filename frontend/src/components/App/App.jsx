@@ -10,9 +10,11 @@ function App() {
   const [unidades, setUnidades] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [proyectoSeleccionado, setProyectoSeleccionado] = useState("");
-  const API_BASE_URL = process.env.NODE_ENV === 'production' 
-  ? '' 
-  : 'http://localhost:8000';
+  const API_BASE_URL =
+  process.env.NODE_ENV === "production"
+    ? "https://preply-backend.onrender.com"   // your Render backend URL
+    : "http://localhost:8000";                // local dev
+
 
   useEffect(() => {
     const cargarProyectos = async () => {

@@ -11,7 +11,10 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # En producción, limitarlo a tu dominio
+    allow_origins=[
+    "https://preply.vercel.app",      # your deployed frontend
+    "http://localhost:3000"           # local React dev server
+],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
